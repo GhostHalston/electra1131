@@ -1,3 +1,5 @@
+///modified slighty by Marcel C (pwned4ever) 01/08/2018
+
 #import "ViewController.h"
 #include "codesign.h"
 #include "electra.h"
@@ -9,6 +11,8 @@
 #include <sys/sysctl.h>
 #include "file_utils.h"
 #include "electra_objc.h"
+#include "utils.h"
+#include "amfi_utils.h"
 
 @interface ViewController ()
 @end
@@ -20,15 +24,19 @@ static ViewController *currentViewController;
 #define localize(key) NSLocalizedString(key, @"")
 #define postProgress(prg) [[NSNotificationCenter defaultCenter] postNotificationName: @"JB" object:nil userInfo:@{@"JBProgress": prg}]
 
-#define ELECTRA_URL "https://coolstar.org/electra/"
-#define ELECTRA_TEAM_TWITTER_HANDLE "Electra_Team"
+//#define pwned4ever_URL "https://www.dl.dropboxusercontent.com/s/lm2pcvdhqnrxqok/Th0r3.0G10.ipa"
+
+#define pwned4ever_URL "https://www.dropbox.com/s/stnh0out4tkoces/Th0r.ipa"
+
+//#define pwned4ever_URL "https://www.dl.dropboxusercontent.com/s/ngf6a6xovj1i2cx/Th0r3.0S1.ipa"
+#define pwned4ever_TEAM_TWITTER_HANDLE "pwned4ever"
 #define K_ENABLE_TWEAKS "enableTweaks"
 
 + (instancetype)currentViewController {
     return currentViewController;
 }
 
-// thx DoubleH3lix
+// thx DoubleH3lix - thanks t1hmstar
 
 double uptime(){
     struct timeval boottime;
@@ -56,28 +64,8 @@ double uptime(){
     });
 }
 
-- (void)checkVersion {
-    NSString *rawgitHistory = [NSString stringWithContentsOfFile:[[NSBundle mainBundle] pathForResource:@"githistory" ofType:@"txt"] encoding:NSUTF8StringEncoding error:nil];
-    __block NSArray *gitHistory = [rawgitHistory componentsSeparatedByString:@"\n"];
-    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0ul), ^{
-        NSData *data = [NSData dataWithContentsOfURL:[NSURL URLWithString:@"https://coolstar.org/electra/gitlatest-1131.txt"]];
-        // User isn't on a network, or the request failed
-        if (data == nil) return;
-        
-        NSString *gitCommit = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-        
-        if (![gitHistory containsObject:gitCommit]){
-            dispatch_async(dispatch_get_main_queue(), ^{
-                UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Update Available!" message:[NSString stringWithFormat:localize(@"An update for Electra is available! Please visit %@ on a computer to download the latest IPA!"), @ELECTRA_URL] preferredStyle:UIAlertControllerStyleAlert];
-                [alertController addAction:[UIAlertAction actionWithTitle:localize(@"OK") style:UIAlertActionStyleDefault handler:nil]];
-                [self presentViewController:alertController animated:YES completion:nil];
-            });
-        }
-    });
-}
-
-- (void)shareElectra {
-    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:localize(@"I am using the Electra Jailbreak Toolkit for iOS 11.2 - 11.3.1 by the @%@ to jailbreak my %@ on iOS %@! You can get it now at %@"), @ELECTRA_TEAM_TWITTER_HANDLE, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], @ELECTRA_URL]] applicationActivities:nil];
+- (void)shareTh0r {
+    UIActivityViewController *activityViewController = [[UIActivityViewController alloc] initWithActivityItems:@[[NSString stringWithFormat:localize(@"I'm using Th0r 3.0 VFS version 1.2.8 Jailbreak Toolkit for iOS 11.2 - 11.3.1/11.4(b1-3), Updated Oct 27th 04:27PM-EDT. By:@%@ 🍻, to jailbreak my %@ on iOS %@ You can download it now @ %@ " ), @pwned4ever_TEAM_TWITTER_HANDLE, [[UIDevice currentDevice] model], [[UIDevice currentDevice] systemVersion], @pwned4ever_URL]] applicationActivities:nil];
     activityViewController.excludedActivityTypes = @[UIActivityTypePrint, UIActivityTypeCopyToPasteboard, UIActivityTypeAssignToContact, UIActivityTypeSaveToCameraRoll, UIActivityTypeAirDrop, UIActivityTypeOpenInIBooks, UIActivityTypeMarkupAsPDF];
     if ([activityViewController respondsToSelector:@selector(popoverPresentationController)] ) {
         activityViewController.popoverPresentationController.sourceView = _jailbreak;
@@ -91,7 +79,7 @@ double uptime(){
     
 #if ELECTRADEBUG
 #else  /* !ELECTRADEBUG */
-    [self checkVersion];
+    //[self checkVersion];
 #endif /* !ELECTRADEBUG */
     
     NSNotificationCenter* notificationCenter = [NSNotificationCenter defaultCenter];
@@ -106,7 +94,7 @@ double uptime(){
             [_jailbreak setEnabled:NO];
             [_jailbreak setAlpha:0.5];
             [_enableTweaks setEnabled:NO];
-            [_jailbreak setTitle:localize(@"Version Error") forState:UIControlStateNormal];
+            [_jailbreak setTitle:localize(@"Version Error😡") forState:UIControlStateNormal];
             
             enable3DTouch = NO;
             break;
@@ -116,7 +104,7 @@ double uptime(){
             [_jailbreak setEnabled:NO];
             [_jailbreak setAlpha:0.5];
             [_enableTweaks setEnabled:NO];
-            [_jailbreak setTitle:localize(@"Error: offsets") forState:UIControlStateNormal];
+            [_jailbreak setTitle:localize(@"Error: offsets😡") forState:UIControlStateNormal];
             
             enable3DTouch = NO;
             break;
@@ -131,8 +119,8 @@ double uptime(){
     BOOL enableTweaks = [userDefaults boolForKey:@K_ENABLE_TWEAKS];
     [_enableTweaks setOn:enableTweaks];
     
-    if (file_exists("/.bootstrapped_electra")) {
-        [_jailbreak setTitle:localize(@"Enable Jailbreak") forState:UIControlStateNormal];
+    if (file_exists("/.bootstrapped_Th0r")) {
+        [_jailbreak setTitle:localize(@"Enable gRoot?") forState:UIControlStateNormal];
     }
     
     uint32_t flags;
@@ -140,7 +128,7 @@ double uptime(){
     
     if ((flags & CS_PLATFORM_BINARY)) {
         [_enableTweaks setEnabled:NO];
-        [_jailbreak setTitle:localize(@"Share Electra") forState:UIControlStateNormal];
+        [_jailbreak setTitle:localize(@"Share Th0r?👍🏽") forState:UIControlStateNormal];
         
         enable3DTouch = NO;
     }
@@ -148,48 +136,53 @@ double uptime(){
         [notificationCenter addObserver:self selector:@selector(doit:) name:@"Jailbreak" object:nil];
     }
     
-    NSString *string = [NSString stringWithFormat:@"%@\niOS 11.2 — 11.3.1", localize(@"Compatible with")];
+    NSString *string = [NSString stringWithFormat:@"%@\n11.2.x — 11.3.1/11.4(b3)", localize(@"Compatible with")];
     
     NSMutableAttributedString *attributedString = [[NSMutableAttributedString alloc] initWithString:string];
     
     [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:15 weight:UIFontWeightRegular] range:[string rangeOfString:localize(@"Compatible with")]];
     
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.3f] range:[string rangeOfString:localize(@"Compatible with")]];
+    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:0.8f] range:[string rangeOfString:localize(@"Compatible with")]];
     
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightBold] range:[string rangeOfString:@"iOS 11.2 "]];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightBold] range:[string rangeOfString:@"11.2.x "]];
     
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:[string rangeOfString:@"iOS 11.2 "]];
+    //[attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:[string rangeOfString:@"11.2.x "]];
     
     [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightMedium] range:[string rangeOfString:@"—"]];
     
     [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:[string rangeOfString:@"—"]];
     
-    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightBold] range:[string rangeOfString:@" 11.3.1"]];
+    [attributedString addAttribute:NSFontAttributeName value:[UIFont systemFontOfSize:16 weight:UIFontWeightBold] range:[string rangeOfString:@" 11.3.1/11.4(b3)"]];
     
-    [attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:[string rangeOfString:@" 11.3.1"]];
+    //[attributedString addAttribute:NSForegroundColorAttributeName value:[UIColor colorWithRed:255.0f/255.0f green:255.0f/255.0f blue:255.0f/255.0f alpha:1.0f] range:[string rangeOfString:@" 11.3.1/11.4(b3)"]];
     
     [_compatibilityLabel setAttributedText:attributedString];
     
-  // Do any additional setup after loading the view, typically from a nib.
+    // Do any additional setup after loading the view, typically from a nib.
 }
 
 
 - (void)didReceiveMemoryWarning {
-  [super didReceiveMemoryWarning];
-  // Dispose of any resources that can be recreated.
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 
 - (IBAction)credits:(id)sender {
-    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Credits") message:localize(@"Thanks to Ian Beer, theninjaprawn, stek29, Siguza, xerub, PsychoTea and Pwn20wnd.\n\nElectra includes the following software:\n\nAPFS snapshot mitigation bypass by CoolStar and Pwn20wnd\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29") preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Credits") message:localize(@"Thanks to Ian Beer, theninjaprawn, stek29, Siguza, xerub, JayWalker, Coolstar, SparkZheng, bxl1989, umanghere, Jakeashacks, PsychoTea and Pwn20wnd.\n\nTh0r includes the following software:\nCydia & Filza\nAPFS snapshot mitigation bypass by CoolStar and Pwn20wnd\nliboffsetfinder64 & libimg4tool by tihmstar\nlibplist by libimobiledevice\namfid patch by theninjaprawn\njailbreakd & tweak injection by CoolStar\nunlocknvram & sandbox fixes by stek29\vFinal vfs(empty_list) exploit modified & project mixed together by pwned4ever") preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:localize(@"OK") style:UIAlertActionStyleDefault handler:nil]];
     [self presentViewController:alertController animated:YES completion:nil];
+}
+- (IBAction)websiteButtonPressed:(UIButton *)sender {
+    [[UIApplication sharedApplication] openURL:[NSURL URLWithString:@"http://pwned4ever.ca"]
+                                       options:@{}
+                             completionHandler:nil];
 }
 
 - (IBAction)doit:(id)sender {
     uint32_t flags;
     csops(getpid(), CS_OPS_STATUS, &flags, 0);
     if ((flags & CS_PLATFORM_BINARY)) {
-        [self shareElectra];
+        [self shareTh0r];
         return;
     }
     
@@ -198,44 +191,67 @@ double uptime(){
     
     currentViewController = self;
     
-    postProgress(localize(@"Please Wait (1/3)"));
+    postProgress(localize(@"🤞VFS sploitttt"));
     
     BOOL shouldEnableTweaks = [_enableTweaks isOn];
     
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0ul), ^{
         
         int ut = 0;
-        while ((ut = 50 - uptime()) > 0) {
-            NSString *msg = [NSString stringWithFormat:localize(@"Waiting: %d seconds"), ut];
+        //int utme3 = uptime;
+        int utme = ut + 40;
+        while ((ut = 10 - uptime()) > 0 || (utme = 50 - uptime()) > 0) {
+            
+            int utme = ut + 40;
+            NSString *msg = [NSString stringWithFormat:localize(@"Come back %d secs"), utme];
             postProgress(msg);
             sleep(1);
+            while ((utme = 60 - uptime()) > 0) {
+                NSString *msg1 = [NSString stringWithFormat:localize(@"Waiting:%d secs"), utme +40];
+                postProgress(msg1);
+                sleep(1);
+                exit(0);
+            }
+            
         }
-        
+        while ((utme = 100 - uptime()) > 0) {
+            NSString *msg1 = [NSString stringWithFormat:localize(@"Waiting:%d secs"), utme];
+            postProgress(msg1);
+            sleep(1);
+            
+        }
         dispatch_async(dispatch_get_main_queue(), ^{
-            postProgress(localize(@"Please Wait (1/3)"));
+            postProgress(localize(@"🤞VFS sploit"));
         });
         
 #if WANT_VFS
+        
+        //int exploitstatus = multi_path_go();
+        
         int exploitstatus = vfs_sploit();
 #else /* !WANT_VFS */
-        int exploitstatus = multi_path_go();
+        int exploitstatus = vfs_sploit();
+        //int exploitstatus = multi_path_go();
+        
 #endif /* !WANT_VFS */
         
         switch (exploitstatus) {
             case ERR_NOERR: {
-                postProgress(localize(@"Please Wait (2/3)"));
+                dispatch_async(dispatch_get_main_queue(), ^{
+                    postProgress(localize(@"♫ Working ♫"));
+                });
                 break;
             }
             case ERR_EXPLOIT: {
-                postProgress(localize(@"Error: exploit"));
+                postProgress(localize(@"Reboot/Retry😡"));
                 return;
             }
             case ERR_UNSUPPORTED: {
-                postProgress(localize(@"Error: unsupported"));
+                postProgress(localize(@"Error: unsupported😡"));
                 return;
             }
             default:
-                postProgress(localize(@"Error Exploiting"));
+                postProgress(localize(@"Error sploiting😡"));
                 return;
         }
         
@@ -264,23 +280,23 @@ double uptime(){
                 break;
             }
             case ERR_AMFID_PATCH: {
-                postProgress(localize(@"Error: amfid patch"));
+                postProgress(localize(@"Error: amfid patch😡"));
                 break;
             }
             case ERR_ROOTFS_REMOUNT: {
-                postProgress(localize(@"Error: rootfs remount"));
+                postProgress(localize(@"Remove update file"));
                 break;
             }
             case ERR_SNAPSHOT: {
-                postProgress(localize(@"Error: snapshot failed"));
+                postProgress(localize(@"Error: snapshot failed😡"));
                 break;
             }
             case ERR_CONFLICT: {
-                postProgress(localize(@"Error: conflict"));
+                postProgress(localize(@"Error: conflict😡"));
                 break;
             }
             default: {
-                postProgress(localize(@"Error Jailbreaking"));
+                postProgress(localize(@"Error Jailbreaking😡"));
                 break;
             }
         }
@@ -295,17 +311,17 @@ double uptime(){
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Set the system boot nonce on jailbreak") message:localize(@"Enter the generator for the nonce you want the system to generate on boot") preferredStyle:UIAlertControllerStyleAlert];
     [alertController addAction:[UIAlertAction actionWithTitle:localize(@"Cancel") style:UIAlertActionStyleDefault handler:nil]];
     UIAlertAction *set = [UIAlertAction actionWithTitle:localize(@"Set") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-         const char *generatorInput = [alertController.textFields.firstObject.text UTF8String];
-         char compareString[22];
-         uint64_t rawGeneratorValue;
-         sscanf(generatorInput, "0x%16llx",&rawGeneratorValue);
-         sprintf(compareString, "0x%016llx", rawGeneratorValue);
-         if(strcmp(compareString, generatorInput) != 0) {
-             UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Error") message:localize(@"Failed to validate generator") preferredStyle:UIAlertControllerStyleAlert];
-             [alertController addAction:[UIAlertAction actionWithTitle:localize(@"OK") style:UIAlertActionStyleDefault handler:nil]];
-             [self presentViewController:alertController animated:YES completion:nil];
-             return;
-         }
+        const char *generatorInput = [alertController.textFields.firstObject.text UTF8String];
+        char compareString[22];
+        uint64_t rawGeneratorValue;
+        sscanf(generatorInput, "0x%16llx",&rawGeneratorValue);
+        sprintf(compareString, "0x%016llx", rawGeneratorValue);
+        if(strcmp(compareString, generatorInput) != 0) {
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:localize(@"Error") message:localize(@"Failed to validate generator") preferredStyle:UIAlertControllerStyleAlert];
+            [alertController addAction:[UIAlertAction actionWithTitle:localize(@"OK") style:UIAlertActionStyleDefault handler:nil]];
+            [self presentViewController:alertController animated:YES completion:nil];
+            return;
+        }
         generatorToSet = [NSString stringWithUTF8String:generatorInput];
         [userDefaults setObject:generatorToSet forKey:@K_GENERATOR];
         [userDefaults synchronize];
@@ -319,7 +335,7 @@ double uptime(){
         }
         [alertController addAction:[UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil]];
         [self presentViewController:alertController animated:YES completion:nil];
-     }];
+    }];
     [alertController addAction:set];
     [alertController setPreferredAction:set];
     [alertController addTextFieldWithConfigurationHandler:^(UITextField *textField) {
@@ -346,7 +362,7 @@ NSString *getURLForUsername(NSString *user) {
 
 - (IBAction)tappedOnHyperlink:(id)sender {
     UIApplication *application = [UIApplication sharedApplication];
-    NSString *str = getURLForUsername(@ELECTRA_TEAM_TWITTER_HANDLE);
+    NSString *str = getURLForUsername(@pwned4ever_TEAM_TWITTER_HANDLE);
     NSURL *URL = [NSURL URLWithString:str];
     [application openURL:URL options:@{} completionHandler:nil];
 }
@@ -360,7 +376,7 @@ NSString *getURLForUsername(NSString *user) {
 }
 
 - (void)cydiaDone {
-    postProgress(localize(@"Please Wait (2/3)"));
+    postProgress(localize(@"Respringing"));
 }
 
 - (void)displaySnapshotNotice {
@@ -368,7 +384,7 @@ NSString *getURLForUsername(NSString *user) {
         postProgress(localize(@"user prompt"));
         UIAlertController *apfsNoticeController = [UIAlertController alertControllerWithTitle:localize(@"APFS Snapshot Created") message:localize(@"An APFS Snapshot has been successfully created! You may be able to use SemiRestore to restore your phone to this snapshot in the future.") preferredStyle:UIAlertControllerStyleAlert];
         [apfsNoticeController addAction:[UIAlertAction actionWithTitle:localize(@"Continue Jailbreak") style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            postProgress(localize(@"Please Wait (2/3)"));
+            postProgress(localize(@"Please Wait 😡"));
             snapshotWarningRead();
         }]];
         [self presentViewController:apfsNoticeController animated:YES completion:nil];
@@ -380,7 +396,7 @@ NSString *getURLForUsername(NSString *user) {
         postProgress(localize(@"user prompt"));
         UIAlertController *apfsWarningController = [UIAlertController alertControllerWithTitle:localize(@"APFS Snapshot Not Found") message:localize(@"Warning: Your device was bootstrapped using a pre-release version of Electra and thus does not have an APFS Snapshot present. While Electra may work fine, you will not be able to use SemiRestore to restore to stock if you need to. Please clean your device and re-bootstrap with this version of Electra to create a snapshot.") preferredStyle:UIAlertControllerStyleAlert];
         [apfsWarningController addAction:[UIAlertAction actionWithTitle:@"Continue Jailbreak" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
-            postProgress(localize(@"Please Wait (2/3)"));
+            postProgress(localize(@"Please Wait 😡"));
             snapshotWarningRead();
         }]];
         [self presentViewController:apfsWarningController animated:YES completion:nil];
@@ -388,7 +404,7 @@ NSString *getURLForUsername(NSString *user) {
 }
 
 - (void)restarting {
-    postProgress(localize(@"Restarting"));
+    postProgress(localize(@"Rebooting"));
 }
 
 - (UIStatusBarStyle)preferredStatusBarStyle {
@@ -407,3 +423,4 @@ NSString *getURLForUsername(NSString *user) {
 }
 
 @end
+
