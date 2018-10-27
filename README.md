@@ -1,4 +1,4 @@
 # electra1131
-A build of electra that supports 11.3.1
+ELECTRA TH0R UNC0VER REMOVER for ios 11.2.x devices
 
 

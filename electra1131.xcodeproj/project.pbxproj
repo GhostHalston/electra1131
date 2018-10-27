@@ -25,6 +25,7 @@
 		B030E1F620BC0864000CDD4C /* multi_path_sploit.c in Sources */ = {isa = PBXBuildFile; fileRef = B030E1F520BC0864000CDD4C /* multi_path_sploit.c */; settings = {COMPILER_FLAGS = "-Wno-unused-variable"; }; };
 		B060B7DF20BC0624001FD0CE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B060B7DE20BC0624001FD0CE /* AppDelegate.m */; };
 		B060B7E220BC0624001FD0CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B060B7E120BC0624001FD0CE /* ViewController.m */; };
+		B060B7E520BC0624001FD0CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E320BC0624001FD0CE /* Main.storyboard */; };
 		B060B7E720BC0624001FD0CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E620BC0624001FD0CE /* Assets.xcassets */; };
 		B060B7EA20BC0624001FD0CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */; };
 		B060B7ED20BC0624001FD0CE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B060B7EC20BC0624001FD0CE /* main.m */; };
@@ -48,6 +49,7 @@
 		F167E3C920C9281A006B956D /* NSData+GZip.m in Sources */ = {isa = PBXBuildFile; fileRef = F167E3C820C9281A006B956D /* NSData+GZip.m */; };
 		F167E3CC20C929F3006B956D /* unlocknvram.c in Sources */ = {isa = PBXBuildFile; fileRef = F167E3CA20C929F2006B956D /* unlocknvram.c */; };
 		F19119E620D9FE0F00CA1BB5 /* CSGradientView.m in Sources */ = {isa = PBXBuildFile; fileRef = F19119E420D9FE0F00CA1BB5 /* CSGradientView.m */; };
+		F191229F20F137C20025A1BD /* AppIcon1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = F191228A20F137C20025A1BD /* AppIcon1024x1024.png */; };
 		F19122A020F137C20025A1BD /* AppIcon20x20.png in Resources */ = {isa = PBXBuildFile; fileRef = F191228B20F137C20025A1BD /* AppIcon20x20.png */; };
 		F19122A120F137C20025A1BD /* AppIcon20x20@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191228C20F137C20025A1BD /* AppIcon20x20@2x.png */; };
 		F19122A220F137C20025A1BD /* AppIcon20x20@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191228D20F137C20025A1BD /* AppIcon20x20@3x.png */; };
@@ -57,8 +59,14 @@
 		F19122A620F137C20025A1BD /* AppIcon40x40.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229120F137C20025A1BD /* AppIcon40x40.png */; };
 		F19122A720F137C20025A1BD /* AppIcon40x40@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229220F137C20025A1BD /* AppIcon40x40@2x.png */; };
 		F19122A820F137C20025A1BD /* AppIcon40x40@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229320F137C20025A1BD /* AppIcon40x40@3x.png */; };
+		F19122A920F137C20025A1BD /* AppIcon50x50.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229420F137C20025A1BD /* AppIcon50x50.png */; };
+		F19122AA20F137C20025A1BD /* AppIcon50x50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229520F137C20025A1BD /* AppIcon50x50@2x.png */; };
+		F19122AB20F137C20025A1BD /* AppIcon57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229620F137C20025A1BD /* AppIcon57x57.png */; };
+		F19122AC20F137C20025A1BD /* AppIcon57x57@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229720F137C20025A1BD /* AppIcon57x57@2x.png */; };
 		F19122AD20F137C20025A1BD /* AppIcon60x60@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229820F137C20025A1BD /* AppIcon60x60@2x.png */; };
 		F19122AE20F137C20025A1BD /* AppIcon60x60@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229920F137C20025A1BD /* AppIcon60x60@3x.png */; };
+		F19122AF20F137C20025A1BD /* AppIcon72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229A20F137C20025A1BD /* AppIcon72x72.png */; };
+		F19122B020F137C20025A1BD /* AppIcon72x72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229B20F137C20025A1BD /* AppIcon72x72@2x.png */; };
 		F19122B120F137C20025A1BD /* AppIcon76x76.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229C20F137C20025A1BD /* AppIcon76x76.png */; };
 		F19122B220F137C20025A1BD /* AppIcon76x76@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229D20F137C20025A1BD /* AppIcon76x76@2x.png */; };
 		F19122B320F137C20025A1BD /* AppIcon83.5x83.5@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = F191229E20F137C20025A1BD /* AppIcon83.5x83.5@2x.png */; };
@@ -66,31 +74,20 @@
 		F1BE57C620CDB09E0087F82D /* tar.gz in Resources */ = {isa = PBXBuildFile; fileRef = F1BE57C220CDB09E0087F82D /* tar.gz */; };
 		F1BE57C720CDB09E0087F82D /* launchctl.gz in Resources */ = {isa = PBXBuildFile; fileRef = F1BE57C320CDB09E0087F82D /* launchctl.gz */; };
 		F1E5C2C820C879A600438426 /* remap_tfp_set_hsp.c in Sources */ = {isa = PBXBuildFile; fileRef = F1E5C2C720C879A600438426 /* remap_tfp_set_hsp.c */; };
-		F70B5D97212655BF00179695 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F70B5D96212655BE00179695 /* Main.storyboard */; };
-		F715AE94212BC6950051B097 /* p7zip_16.02_iphoneos-arm.deb.gz in Resources */ = {isa = PBXBuildFile; fileRef = F715AE8E212BC6950051B097 /* p7zip_16.02_iphoneos-arm.deb.gz */; };
-		F715AE96212BC6950051B097 /* unrar_5.5.8_iphoneos-arm.deb.gz in Resources */ = {isa = PBXBuildFile; fileRef = F715AE90212BC6950051B097 /* unrar_5.5.8_iphoneos-arm.deb.gz */; };
-		F715AE97212BC6950051B097 /* unzip_6.0_iphoneos-arm.deb.gz in Resources */ = {isa = PBXBuildFile; fileRef = F715AE91212BC6950051B097 /* unzip_6.0_iphoneos-arm.deb.gz */; };
-		F715AE98212BC6950051B097 /* zip_3.0_iphoneos-arm.deb.gz in Resources */ = {isa = PBXBuildFile; fileRef = F715AE92212BC6950051B097 /* zip_3.0_iphoneos-arm.deb.gz */; };
-		F715AEA0212BD3BB0051B097 /* com.tigisoftware.filza64bit_3.5.2-4_iphoneos-arm.deb.gz in Resources */ = {isa = PBXBuildFile; fileRef = F715AE9F212BD3BB0051B097 /* com.tigisoftware.filza64bit_3.5.2-4_iphoneos-arm.deb.gz */; };
-		FD13FF2B214ED2A1000AE917 /* p4circle.png in Resources */ = {isa = PBXBuildFile; fileRef = FD13FF2A214ED2A1000AE917 /* p4circle.png */; };
-		FD13FF2D214ED315000AE917 /* Th0rDestroyerOfStorms.JPG in Resources */ = {isa = PBXBuildFile; fileRef = FD13FF2C214ED315000AE917 /* Th0rDestroyerOfStorms.JPG */; };
-		FD1533F3217AABDD00BBF41A /* pwnedstrap.tar.gz in Resources */ = {isa = PBXBuildFile; fileRef = FD1533F2217AABDC00BBF41A /* pwnedstrap.tar.gz */; };
-		FD1533F9217AD6BD00BBF41A /* libjailbreak.tar in Resources */ = {isa = PBXBuildFile; fileRef = FD1533F4217AD6BC00BBF41A /* libjailbreak.tar */; };
-		FD1533FA217AD6BD00BBF41A /* pspawn_hook.tar in Resources */ = {isa = PBXBuildFile; fileRef = FD1533F5217AD6BC00BBF41A /* pspawn_hook.tar */; };
-		FD1533FB217AD6BD00BBF41A /* jailbreakd.tar in Resources */ = {isa = PBXBuildFile; fileRef = FD1533F6217AD6BD00BBF41A /* jailbreakd.tar */; };
-		FD1533FC217AD6BD00BBF41A /* rsync.tar in Resources */ = {isa = PBXBuildFile; fileRef = FD1533F7217AD6BD00BBF41A /* rsync.tar */; };
-		FD1533FD217AD6BD00BBF41A /* spawn.tar in Resources */ = {isa = PBXBuildFile; fileRef = FD1533F8217AD6BD00BBF41A /* spawn.tar */; };
-		FD1533FF217AD7DA00BBF41A /* amfid_payload.tar in Resources */ = {isa = PBXBuildFile; fileRef = FD1533FE217AD7DA00BBF41A /* amfid_payload.tar */; };
-		FD175B8B215F1B8C00AAB625 /* ldrestart.gz in Resources */ = {isa = PBXBuildFile; fileRef = FD175B8A215F1B8B00AAB625 /* ldrestart.gz */; };
-		FDE55AB8215D837D006D030A /* ElecTh0rRemover1.0.sh.gz in Resources */ = {isa = PBXBuildFile; fileRef = FDE55AB7215D837D006D030A /* ElecTh0rRemover1.0.sh.gz */; };
-		FDEB54DF2130FC5800651F81 /* uicache.gz in Resources */ = {isa = PBXBuildFile; fileRef = FDEB54DD2130FC5800651F81 /* uicache.gz */; };
-		FDEB54E02130FC5800651F81 /* killall.gz in Resources */ = {isa = PBXBuildFile; fileRef = FDEB54DE2130FC5800651F81 /* killall.gz */; };
+		FD4A78D62153E6EA00A1CBCC /* find.gz in Resources */ = {isa = PBXBuildFile; fileRef = FD4A78D52153E6EA00A1CBCC /* find.gz */; };
+		FDCD29C12138E0AB0053EF1C /* uicache.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDCD29C02138E0AB0053EF1C /* uicache.mm */; };
+		FDF392372132F3DF004C6786 /* uicache.gz in Resources */ = {isa = PBXBuildFile; fileRef = FDF392352132F3DF004C6786 /* uicache.gz */; };
+		FDF392412132F61F004C6786 /* mypicPROFILE.png in Resources */ = {isa = PBXBuildFile; fileRef = FDF3923A2132F61C004C6786 /* mypicPROFILE.png */; };
+		FDF392422132F61F004C6786 /* rtrrre.png in Resources */ = {isa = PBXBuildFile; fileRef = FDF3923B2132F61D004C6786 /* rtrrre.png */; };
+		FDF392442132F61F004C6786 /* stars.png in Resources */ = {isa = PBXBuildFile; fileRef = FDF3923D2132F61E004C6786 /* stars.png */; };
+		FDF392482132F634004C6786 /* trashfullE.png in Resources */ = {isa = PBXBuildFile; fileRef = FDF392472132F633004C6786 /* trashfullE.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		210302E320E0D0090002D2F3 /* kmem.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = kmem.c; sourceTree = "<group>"; };
 		210302E520E0DB2A0002D2F3 /* vfs_sploit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = vfs_sploit.h; sourceTree = "<group>"; };
 		210302E620E0DB2B0002D2F3 /* vfs_sploit.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = vfs_sploit.c; sourceTree = "<group>"; };
+		2119DFB720F0102600E08817 /* electra1131.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = electra1131.entitlements; sourceTree = "<group>"; };
 		2124A2F120EEB13E00E30610 /* reboot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reboot.h; sourceTree = "<group>"; };
 		2124A2F420EF52D300E30610 /* NSString+SHA256.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSString+SHA256.h"; sourceTree = "<group>"; };
 		2124A2F520EF532200E30610 /* NSString+SHA256.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSString+SHA256.m"; sourceTree = "<group>"; };
@@ -117,11 +114,12 @@
 		B00730BE20C72BCB005995FA /* kmem.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = kmem.h; sourceTree = "<group>"; };
 		B030E1F420BC0864000CDD4C /* multi_path_sploit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = multi_path_sploit.h; sourceTree = "<group>"; };
 		B030E1F520BC0864000CDD4C /* multi_path_sploit.c */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.c; path = multi_path_sploit.c; sourceTree = "<group>"; };
-		B060B7DA20BC0624001FD0CE /* Th0r.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Th0r.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B060B7DA20BC0624001FD0CE /* ElecTh0rRemover.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ElecTh0rRemover.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B060B7DD20BC0624001FD0CE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B060B7DE20BC0624001FD0CE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		B060B7E020BC0624001FD0CE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		B060B7E120BC0624001FD0CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B060B7E420BC0624001FD0CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B060B7E620BC0624001FD0CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B060B7E920BC0624001FD0CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B060B7EB20BC0624001FD0CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -166,6 +164,7 @@
 		F167E3CB20C929F2006B956D /* unlocknvram.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = unlocknvram.h; sourceTree = "<group>"; };
 		F19119E420D9FE0F00CA1BB5 /* CSGradientView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CSGradientView.m; sourceTree = "<group>"; };
 		F19119E520D9FE0F00CA1BB5 /* CSGradientView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CSGradientView.h; sourceTree = "<group>"; };
+		F191228A20F137C20025A1BD /* AppIcon1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon1024x1024.png; sourceTree = "<group>"; };
 		F191228B20F137C20025A1BD /* AppIcon20x20.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon20x20.png; sourceTree = "<group>"; };
 		F191228C20F137C20025A1BD /* AppIcon20x20@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon20x20@2x.png"; sourceTree = "<group>"; };
 		F191228D20F137C20025A1BD /* AppIcon20x20@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon20x20@3x.png"; sourceTree = "<group>"; };
@@ -175,8 +174,14 @@
 		F191229120F137C20025A1BD /* AppIcon40x40.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon40x40.png; sourceTree = "<group>"; };
 		F191229220F137C20025A1BD /* AppIcon40x40@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@2x.png"; sourceTree = "<group>"; };
 		F191229320F137C20025A1BD /* AppIcon40x40@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon40x40@3x.png"; sourceTree = "<group>"; };
+		F191229420F137C20025A1BD /* AppIcon50x50.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon50x50.png; sourceTree = "<group>"; };
+		F191229520F137C20025A1BD /* AppIcon50x50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon50x50@2x.png"; sourceTree = "<group>"; };
+		F191229620F137C20025A1BD /* AppIcon57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon57x57.png; sourceTree = "<group>"; };
+		F191229720F137C20025A1BD /* AppIcon57x57@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon57x57@2x.png"; sourceTree = "<group>"; };
 		F191229820F137C20025A1BD /* AppIcon60x60@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@2x.png"; sourceTree = "<group>"; };
 		F191229920F137C20025A1BD /* AppIcon60x60@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon60x60@3x.png"; sourceTree = "<group>"; };
+		F191229A20F137C20025A1BD /* AppIcon72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon72x72.png; sourceTree = "<group>"; };
+		F191229B20F137C20025A1BD /* AppIcon72x72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon72x72@2x.png"; sourceTree = "<group>"; };
 		F191229C20F137C20025A1BD /* AppIcon76x76.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = AppIcon76x76.png; sourceTree = "<group>"; };
 		F191229D20F137C20025A1BD /* AppIcon76x76@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon76x76@2x.png"; sourceTree = "<group>"; };
 		F191229E20F137C20025A1BD /* AppIcon83.5x83.5@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppIcon83.5x83.5@2x.png"; sourceTree = "<group>"; };
@@ -185,26 +190,13 @@
 		F1BE57C320CDB09E0087F82D /* launchctl.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = launchctl.gz; sourceTree = "<group>"; };
 		F1E5C2C620C879A600438426 /* remap_tfp_set_hsp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = remap_tfp_set_hsp.h; sourceTree = "<group>"; };
 		F1E5C2C720C879A600438426 /* remap_tfp_set_hsp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = remap_tfp_set_hsp.c; sourceTree = "<group>"; };
-		F70B5D96212655BE00179695 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		F715AE8E212BC6950051B097 /* p7zip_16.02_iphoneos-arm.deb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "p7zip_16.02_iphoneos-arm.deb.gz"; sourceTree = "<group>"; };
-		F715AE90212BC6950051B097 /* unrar_5.5.8_iphoneos-arm.deb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "unrar_5.5.8_iphoneos-arm.deb.gz"; sourceTree = "<group>"; };
-		F715AE91212BC6950051B097 /* unzip_6.0_iphoneos-arm.deb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "unzip_6.0_iphoneos-arm.deb.gz"; sourceTree = "<group>"; };
-		F715AE92212BC6950051B097 /* zip_3.0_iphoneos-arm.deb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "zip_3.0_iphoneos-arm.deb.gz"; sourceTree = "<group>"; };
-		F715AE9F212BD3BB0051B097 /* com.tigisoftware.filza64bit_3.5.2-4_iphoneos-arm.deb.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = "com.tigisoftware.filza64bit_3.5.2-4_iphoneos-arm.deb.gz"; sourceTree = "<group>"; };
-		FD13FF2A214ED2A1000AE917 /* p4circle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = p4circle.png; sourceTree = "<group>"; };
-		FD13FF2C214ED315000AE917 /* Th0rDestroyerOfStorms.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Th0rDestroyerOfStorms.JPG; sourceTree = "<group>"; };
-		FD1533F2217AABDC00BBF41A /* pwnedstrap.tar.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = pwnedstrap.tar.gz; sourceTree = "<group>"; };
-		FD1533F4217AD6BC00BBF41A /* libjailbreak.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = libjailbreak.tar; sourceTree = "<group>"; };
-		FD1533F5217AD6BC00BBF41A /* pspawn_hook.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = pspawn_hook.tar; sourceTree = "<group>"; };
-		FD1533F6217AD6BD00BBF41A /* jailbreakd.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = jailbreakd.tar; sourceTree = "<group>"; };
-		FD1533F7217AD6BD00BBF41A /* rsync.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = rsync.tar; sourceTree = "<group>"; };
-		FD1533F8217AD6BD00BBF41A /* spawn.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = spawn.tar; sourceTree = "<group>"; };
-		FD1533FE217AD7DA00BBF41A /* amfid_payload.tar */ = {isa = PBXFileReference; lastKnownFileType = archive.tar; path = amfid_payload.tar; sourceTree = "<group>"; };
-		FD175B8A215F1B8B00AAB625 /* ldrestart.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = ldrestart.gz; sourceTree = "<group>"; };
-		FD8863012184F6BF00C0B8AB /* electra1131.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = electra1131.entitlements; sourceTree = "<group>"; };
-		FDE55AB7215D837D006D030A /* ElecTh0rRemover1.0.sh.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = ElecTh0rRemover1.0.sh.gz; sourceTree = "<group>"; };
-		FDEB54DD2130FC5800651F81 /* uicache.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = uicache.gz; sourceTree = "<group>"; };
-		FDEB54DE2130FC5800651F81 /* killall.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = killall.gz; sourceTree = "<group>"; };
+		FD4A78D52153E6EA00A1CBCC /* find.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = find.gz; sourceTree = "<group>"; };
+		FDCD29C02138E0AB0053EF1C /* uicache.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = uicache.mm; sourceTree = "<group>"; };
+		FDF392352132F3DF004C6786 /* uicache.gz */ = {isa = PBXFileReference; lastKnownFileType = archive.gzip; path = uicache.gz; sourceTree = "<group>"; };
+		FDF3923A2132F61C004C6786 /* mypicPROFILE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mypicPROFILE.png; sourceTree = "<group>"; };
+		FDF3923B2132F61D004C6786 /* rtrrre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = rtrrre.png; sourceTree = "<group>"; };
+		FDF3923D2132F61E004C6786 /* stars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stars.png; sourceTree = "<group>"; };
+		FDF392472132F633004C6786 /* trashfullE.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = trashfullE.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,7 +297,7 @@
 		B060B7DB20BC0624001FD0CE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B060B7DA20BC0624001FD0CE /* Th0r.app */,
+				B060B7DA20BC0624001FD0CE /* ElecTh0rRemover.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -313,8 +305,8 @@
 		B060B7DC20BC0624001FD0CE /* electra1131 */ = {
 			isa = PBXGroup;
 			children = (
-				FD8863012184F6BF00C0B8AB /* electra1131.entitlements */,
 				F191228920F137C20025A1BD /* Resources */,
+				2119DFB720F0102600E08817 /* electra1131.entitlements */,
 				2124A2F320EF52A700E30610 /* Extensions */,
 				21A2C43520DBC09E000BA2B2 /* libs */,
 				F19119E220D9FDE000CA1BB5 /* app */,
@@ -348,6 +340,7 @@
 				F167E3C420C927DE006B956D /* electra_objc.m */,
 				F13A09E120C85EFA00DC838E /* electra.c */,
 				F13A09E220C85EFA00DC838E /* electra.h */,
+				FDCD29C02138E0AB0053EF1C /* uicache.mm */,
 				F161FD0D20CDB12D009D4652 /* bootstrap.c */,
 				F161FD0C20CDB12D009D4652 /* bootstrap.h */,
 				F161FD0F20CDB22D009D4652 /* start_jailbreakd.m */,
@@ -434,7 +427,7 @@
 				B060B7DD20BC0624001FD0CE /* AppDelegate.h */,
 				B060B7DE20BC0624001FD0CE /* AppDelegate.m */,
 				B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */,
-				F70B5D96212655BE00179695 /* Main.storyboard */,
+				B060B7E320BC0624001FD0CE /* Main.storyboard */,
 				F19119E120D9FDD800CA1BB5 /* controllers */,
 				F19119E320D9FE0200CA1BB5 /* view */,
 			);
@@ -453,7 +446,11 @@
 		F191228920F137C20025A1BD /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				FD13FF2A214ED2A1000AE917 /* p4circle.png */,
+				FDF3923A2132F61C004C6786 /* mypicPROFILE.png */,
+				FDF3923B2132F61D004C6786 /* rtrrre.png */,
+				FDF3923D2132F61E004C6786 /* stars.png */,
+				FDF392472132F633004C6786 /* trashfullE.png */,
+				F191228A20F137C20025A1BD /* AppIcon1024x1024.png */,
 				F191228B20F137C20025A1BD /* AppIcon20x20.png */,
 				F191228C20F137C20025A1BD /* AppIcon20x20@2x.png */,
 				F191228D20F137C20025A1BD /* AppIcon20x20@3x.png */,
@@ -463,12 +460,17 @@
 				F191229120F137C20025A1BD /* AppIcon40x40.png */,
 				F191229220F137C20025A1BD /* AppIcon40x40@2x.png */,
 				F191229320F137C20025A1BD /* AppIcon40x40@3x.png */,
+				F191229420F137C20025A1BD /* AppIcon50x50.png */,
+				F191229520F137C20025A1BD /* AppIcon50x50@2x.png */,
+				F191229620F137C20025A1BD /* AppIcon57x57.png */,
+				F191229720F137C20025A1BD /* AppIcon57x57@2x.png */,
 				F191229820F137C20025A1BD /* AppIcon60x60@2x.png */,
 				F191229920F137C20025A1BD /* AppIcon60x60@3x.png */,
+				F191229A20F137C20025A1BD /* AppIcon72x72.png */,
+				F191229B20F137C20025A1BD /* AppIcon72x72@2x.png */,
 				F191229C20F137C20025A1BD /* AppIcon76x76.png */,
 				F191229D20F137C20025A1BD /* AppIcon76x76@2x.png */,
 				F191229E20F137C20025A1BD /* AppIcon83.5x83.5@2x.png */,
-				FD13FF2C214ED315000AE917 /* Th0rDestroyerOfStorms.JPG */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -476,22 +478,8 @@
 		F1BE57C020CDB0780087F82D /* bootstrap */ = {
 			isa = PBXGroup;
 			children = (
-				FD1533FE217AD7DA00BBF41A /* amfid_payload.tar */,
-				FD1533F6217AD6BD00BBF41A /* jailbreakd.tar */,
-				FD1533F4217AD6BC00BBF41A /* libjailbreak.tar */,
-				FD1533F5217AD6BC00BBF41A /* pspawn_hook.tar */,
-				FD1533F7217AD6BD00BBF41A /* rsync.tar */,
-				FD1533F8217AD6BD00BBF41A /* spawn.tar */,
-				FD1533F2217AABDC00BBF41A /* pwnedstrap.tar.gz */,
-				FDE55AB7215D837D006D030A /* ElecTh0rRemover1.0.sh.gz */,
-				FDEB54DE2130FC5800651F81 /* killall.gz */,
-				FDEB54DD2130FC5800651F81 /* uicache.gz */,
-				FD175B8A215F1B8B00AAB625 /* ldrestart.gz */,
-				F715AE9F212BD3BB0051B097 /* com.tigisoftware.filza64bit_3.5.2-4_iphoneos-arm.deb.gz */,
-				F715AE8E212BC6950051B097 /* p7zip_16.02_iphoneos-arm.deb.gz */,
-				F715AE90212BC6950051B097 /* unrar_5.5.8_iphoneos-arm.deb.gz */,
-				F715AE91212BC6950051B097 /* unzip_6.0_iphoneos-arm.deb.gz */,
-				F715AE92212BC6950051B097 /* zip_3.0_iphoneos-arm.deb.gz */,
+				FD4A78D52153E6EA00A1CBCC /* find.gz */,
+				FDF392352132F3DF004C6786 /* uicache.gz */,
 				F1524FCE20CE60A7001F9E25 /* jailbreakd.plist */,
 				F1BE57C320CDB09E0087F82D /* launchctl.gz */,
 				F1BE57C120CDB09E0087F82D /* rm.gz */,
@@ -503,9 +491,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B060B7D920BC0624001FD0CE /* Th0r */ = {
+		B060B7D920BC0624001FD0CE /* ElecTh0rRemover */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B060B7F020BC0624001FD0CE /* Build configuration list for PBXNativeTarget "Th0r" */;
+			buildConfigurationList = B060B7F020BC0624001FD0CE /* Build configuration list for PBXNativeTarget "ElecTh0rRemover" */;
 			buildPhases = (
 				B060B7D620BC0624001FD0CE /* Sources */,
 				B060B7D720BC0624001FD0CE /* Frameworks */,
@@ -516,9 +504,9 @@
 			);
 			dependencies = (
 			);
-			name = Th0r;
+			name = ElecTh0rRemover;
 			productName = multi_path;
-			productReference = B060B7DA20BC0624001FD0CE /* Th0r.app */;
+			productReference = B060B7DA20BC0624001FD0CE /* ElecTh0rRemover.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -554,7 +542,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B060B7D920BC0624001FD0CE /* Th0r */,
+				B060B7D920BC0624001FD0CE /* ElecTh0rRemover */,
 			);
 		};
 /* End PBXProject section */
@@ -565,45 +553,40 @@
 			buildActionMask = 2147483647;
 			files = (
 				F19122A720F137C20025A1BD /* AppIcon40x40@2x.png in Resources */,
-				FDEB54DF2130FC5800651F81 /* uicache.gz in Resources */,
+				FDF392442132F61F004C6786 /* stars.png in Resources */,
 				F19122B220F137C20025A1BD /* AppIcon76x76@2x.png in Resources */,
-				F715AEA0212BD3BB0051B097 /* com.tigisoftware.filza64bit_3.5.2-4_iphoneos-arm.deb.gz in Resources */,
-				FD13FF2D214ED315000AE917 /* Th0rDestroyerOfStorms.JPG in Resources */,
-				F715AE94212BC6950051B097 /* p7zip_16.02_iphoneos-arm.deb.gz in Resources */,
 				21AF0C9A20E39E62008254EC /* Localizable.strings in Resources */,
-				FD1533FD217AD6BD00BBF41A /* spawn.tar in Resources */,
+				F19122AC20F137C20025A1BD /* AppIcon57x57@2x.png in Resources */,
 				F19122A420F137C20025A1BD /* AppIcon29x29@2x.png in Resources */,
 				B060B7EA20BC0624001FD0CE /* LaunchScreen.storyboard in Resources */,
 				F19122A620F137C20025A1BD /* AppIcon40x40.png in Resources */,
-				FDEB54E02130FC5800651F81 /* killall.gz in Resources */,
 				F1BE57C620CDB09E0087F82D /* tar.gz in Resources */,
-				FD13FF2B214ED2A1000AE917 /* p4circle.png in Resources */,
 				F19122AE20F137C20025A1BD /* AppIcon60x60@3x.png in Resources */,
 				F19122A820F137C20025A1BD /* AppIcon40x40@3x.png in Resources */,
+				FDF392422132F61F004C6786 /* rtrrre.png in Resources */,
 				F19122A020F137C20025A1BD /* AppIcon20x20.png in Resources */,
 				B060B7E720BC0624001FD0CE /* Assets.xcassets in Resources */,
+				F191229F20F137C20025A1BD /* AppIcon1024x1024.png in Resources */,
+				FDF392372132F3DF004C6786 /* uicache.gz in Resources */,
+				FDF392482132F634004C6786 /* trashfullE.png in Resources */,
 				F19122B320F137C20025A1BD /* AppIcon83.5x83.5@2x.png in Resources */,
 				F1BE57C720CDB09E0087F82D /* launchctl.gz in Resources */,
 				F19122A520F137C20025A1BD /* AppIcon29x29@3x.png in Resources */,
 				F19122A220F137C20025A1BD /* AppIcon20x20@3x.png in Resources */,
 				F1524FCF20CE60A7001F9E25 /* jailbreakd.plist in Resources */,
-				F715AE98212BC6950051B097 /* zip_3.0_iphoneos-arm.deb.gz in Resources */,
-				FD1533FB217AD6BD00BBF41A /* jailbreakd.tar in Resources */,
-				FD1533F3217AABDD00BBF41A /* pwnedstrap.tar.gz in Resources */,
-				FD1533F9217AD6BD00BBF41A /* libjailbreak.tar in Resources */,
-				FD1533FC217AD6BD00BBF41A /* rsync.tar in Resources */,
+				F19122A920F137C20025A1BD /* AppIcon50x50.png in Resources */,
+				B060B7E520BC0624001FD0CE /* Main.storyboard in Resources */,
+				F19122AB20F137C20025A1BD /* AppIcon57x57.png in Resources */,
 				F19122A320F137C20025A1BD /* AppIcon29x29.png in Resources */,
-				F715AE97212BC6950051B097 /* unzip_6.0_iphoneos-arm.deb.gz in Resources */,
-				FDE55AB8215D837D006D030A /* ElecTh0rRemover1.0.sh.gz in Resources */,
-				FD1533FA217AD6BD00BBF41A /* pspawn_hook.tar in Resources */,
-				F70B5D97212655BF00179695 /* Main.storyboard in Resources */,
+				FD4A78D62153E6EA00A1CBCC /* find.gz in Resources */,
 				F19122A120F137C20025A1BD /* AppIcon20x20@2x.png in Resources */,
-				FD1533FF217AD7DA00BBF41A /* amfid_payload.tar in Resources */,
 				F1BE57C520CDB09E0087F82D /* rm.gz in Resources */,
-				F715AE96212BC6950051B097 /* unrar_5.5.8_iphoneos-arm.deb.gz in Resources */,
 				F19122B120F137C20025A1BD /* AppIcon76x76.png in Resources */,
+				F19122B020F137C20025A1BD /* AppIcon72x72@2x.png in Resources */,
+				FDF392412132F61F004C6786 /* mypicPROFILE.png in Resources */,
 				F19122AD20F137C20025A1BD /* AppIcon60x60@2x.png in Resources */,
-				FD175B8B215F1B8C00AAB625 /* ldrestart.gz in Resources */,
+				F19122AA20F137C20025A1BD /* AppIcon50x50@2x.png in Resources */,
+				F19122AF20F137C20025A1BD /* AppIcon72x72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -612,7 +595,7 @@
 /* Begin PBXShellScriptBuildPhase section */
 		F1BE57BE20CDB02D0087F82D /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 12;
+			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
@@ -621,7 +604,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "export PATH=\"$PATH:$HOME/bin\"\n\nMACOSX_SDK=$(xcrun --show-sdk-path --sdk macosx)\n# suppress warning\nrm -f $SRCROOT/basebinaries/apple_include/xpc $SRCROOT/basebinaries/apple_include/launch.h\nln -s $MACOSX_SDK/usr/include/xpc $SRCROOT/basebinaries/apple_include/xpc\nln -s $MACOSX_SDK/usr/include/launch.h $SRCROOT/basebinaries/apple_include/launch.h\n\nmake -C $SRCROOT/basebinaries clean all \"OUTDIR=$DERIVED_FILE_DIR\"\ncp \"$DERIVED_FILE_DIR/basebinaries.tar\" \"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/basebinaries.tar\"\n";
+			shellScript = "export PATH=\"$PATH:$HOME/bin\"\n\nMACOSX_SDK=$(xcrun --show-sdk-path --sdk macosx)\n# suppress warning\nrm -f $SRCROOT/basebinaries/apple_include/xpc $SRCROOT/basebinaries/apple_include/launch.h\nln -s $MACOSX_SDK/usr/include/xpc $SRCROOT/basebinaries/apple_include/xpc\nln -s $MACOSX_SDK/usr/include/launch.h $SRCROOT/basebinaries/apple_include/launch.h\n\nmake -C $SRCROOT/basebinaries clean all \"OUTDIR=$DERIVED_FILE_DIR\"\ncp \"$DERIVED_FILE_DIR/basebinaries.tar\" \"$BUILT_PRODUCTS_DIR/$CONTENTS_FOLDER_PATH/basebinaries.tar\"";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -634,6 +617,7 @@
 				B030E1F620BC0864000CDD4C /* multi_path_sploit.c in Sources */,
 				F134CC9920C89CA700DA1F72 /* utils.c in Sources */,
 				21E077F820D5425000F86A55 /* nonce.c in Sources */,
+				FDCD29C12138E0AB0053EF1C /* uicache.mm in Sources */,
 				B060B7E220BC0624001FD0CE /* ViewController.m in Sources */,
 				F161FD1020CDB22D009D4652 /* start_jailbreakd.m in Sources */,
 				B060B7ED20BC0624001FD0CE /* main.m in Sources */,
@@ -673,6 +657,14 @@
 				21AF0C9B20E39E62008254EC /* en */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		B060B7E320BC0624001FD0CE /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B060B7E420BC0624001FD0CE /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 		B060B7E820BC0624001FD0CE /* LaunchScreen.storyboard */ = {
@@ -796,7 +788,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
-				CODE_SIGN_ENTITLEMENTS = electra1131/;
+				CODE_SIGN_ENTITLEMENTS = electra1131/electra1131.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -809,8 +801,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/electra1131",
 					"$(PROJECT_DIR)/electra1131/libs",
-					"$(PROJECT_DIR)/electra1131/bootstrap",
-					"$(PROJECT_DIR)/electra1131/bootstrap/testog/filza1",
 				);
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_CFLAGS = "-DELECTRADEBUG";
@@ -818,7 +808,7 @@
 					"-framework",
 					IOKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.p4e.Th0r;
+				PRODUCT_BUNDLE_IDENTIFIER = com.p4e.ElecTh0rRemover3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -830,7 +820,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = NO;
-				CODE_SIGN_ENTITLEMENTS = electra1131/;
+				CODE_SIGN_ENTITLEMENTS = electra1131/electra1131.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = "";
@@ -843,8 +833,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/electra1131",
 					"$(PROJECT_DIR)/electra1131/libs",
-					"$(PROJECT_DIR)/electra1131/bootstrap",
-					"$(PROJECT_DIR)/electra1131/bootstrap/testog/filza1",
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_CFLAGS = "-DELECTRADEBUG";
@@ -852,7 +840,7 @@
 					"-framework",
 					IOKit,
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.p4e.Th0r;
+				PRODUCT_BUNDLE_IDENTIFIER = com.p4e.ElecTh0rRemover3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -872,7 +860,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B060B7F020BC0624001FD0CE /* Build configuration list for PBXNativeTarget "Th0r" */ = {
+		B060B7F020BC0624001FD0CE /* Build configuration list for PBXNativeTarget "ElecTh0rRemover" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B060B7F120BC0624001FD0CE /* Debug */,
